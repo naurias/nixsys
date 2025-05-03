@@ -1,0 +1,46 @@
+{
+	description = "Personal NixOS flake";
+
+	inputs = {
+ 
+		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+			home-manager = {
+				url = "github:nix-community/home-manager";
+				inputs.nixpkgs.follows = "nixpkgs";
+			};
+    
+		};
+
+	outputs = {
+		self,
+		home-manager,
+		nixpkgs,
+		...
+	} @ inputs : 
+  let
+		inherit (self) outputs;
+			Systems = [
+				"x86_64-linux"
+			];
+			forAllSystems = nixpkgs.lib.genAttrs systems;
+
+	in {
+		packages =
+			forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+			overlays = import ./overlays {inherit inputs;};
+			nixosConfigurations = {
+				nixreaper = nixpkgs.lib.nixosSystem {
+					specialArgs = {inherit inputs outputs;};
+					modules = [./hosts/nixreaper];
+				};
+			};
+
+			homeConfigurations = {
+				"nix@nixreaper"= home-manager.lib.homeManagerConfiguration {
+					pkgs = nixpkgs.legacyPackages."x86_64-linux";
+					extraSpecialArgs = {inherit inputs outputs;};
+					modules = [./home/nix/nixreaper.nix];
+				};
+			};
+	};
+}

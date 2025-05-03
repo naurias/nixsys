@@ -1,0 +1,30 @@
+{
+	config,
+	lib,
+	pkgs,
+	...
+}:
+
+	with lib; let
+		cfg = config.features.desktop.wayland;
+	in
+{
+	options.features.desktop.wayland.enable = mkEnableOption "wayland dotfiles and tools";
+
+
+	config = mkIf cfg.enable {
+
+		programs.yambar = {
+			enable = true;
+			settings = {
+				bar {
+
+				};
+			};
+		};
+	# can had home files for wayland dotfiles and dotfile configurations
+	# can add packages
+	
+	};
+	
+}

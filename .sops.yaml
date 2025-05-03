@@ -1,0 +1,11 @@
+keys:
+  - &users:
+    - &nix age1au8lzrk43qdslnqyldtsa9ca5gefrdq3vrpd7zwjus8f204zzens5cpv8s
+  - &hosts:
+    - &nixreaper age1rzq0ape90h6pxk85rv2kt4qee0t42844tmgyn29q93gzzt57eupqlq0sle
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+      - age:
+        - *nix
+        - *nixreaper

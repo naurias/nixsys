@@ -1,0 +1,38 @@
+ 
+
+
+ # settings.vim.extraPlugins = with pkgs.vimPlugins; {
+  16   │       #   kanagawa-nvim = {
+  17   │       #     package = kanagawa-nvim;
+  18   │       #     setup = ''
+  19   │       #       -- Default options:
+  20   │       #       require('kanagawa').setup({
+  21   │       #           compile = false,             -- enable compiling the colorscheme
+  22   │       #           undercurl = true,            -- enable undercurls
+  23   │       #           commentStyle = { italic = true },
+  24   │       #           functionStyle = {},
+  25   │       #           keywordStyle = { italic = true},
+  26   │       #           statementStyle = { bold = true },
+  27   │       #           typeStyle = {},
+  28   │       #           transparent = false,         -- do not set background color
+  29   │       #           dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
+  30   │       #           terminalColors = true,       -- define vim.g.terminal_color_{0,17}
+  31   │       #           colors = {                   -- add/modify theme and palette colors
+  32   │       #               palette = {},
+  33   │       #               theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+  34   │       #           },
+  35   │       #           overrides = function(colors) -- add/modify highlights
+  36   │       #               return {}
+  37   │       #           end,
+  38   │       #           theme = "wave",              -- Load "wave" theme
+  39   │       #           background = {               -- map the value of 'background' option to a theme
+  40   │       #               dark = "wave",           -- try "dragon" !
+  41   │       #               light = "lotus"
+  42   │       #           },
+  43   │       #       })
+  44   │       #
+  45   │       #       -- setup must be called before loading
+  46   │       #       vim.cmd("colorscheme kanagawa")
+  47   │       #     '';
+  48   │       #   };
+  49   │       # };
