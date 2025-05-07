@@ -191,7 +191,7 @@ in {
         						riverctl rule-add -app-id "bar" csd
                     riverctl rule-add ssd
 
-        						rivertile -view-padding 6 -outer-padding 6 &
+        						rivertile -view-padding 3 -outer-padding 3 &
 
       '';
     };

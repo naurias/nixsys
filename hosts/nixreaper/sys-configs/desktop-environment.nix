@@ -8,7 +8,7 @@
     enable = true;
     xwayland.enable = true;
   };
-
+  environment.localBinInPath = true;
   programs.hyprland.enable = true;
   programs.hyprland.withUWSM = true;
 

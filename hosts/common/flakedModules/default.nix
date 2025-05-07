@@ -1,9 +1,7 @@
 {
-
-	imports = [
-#		./podman.nix
+  imports = [
+    #		./podman.nix
     ./snowvim.nix
     ./stylix.nix
-	];
-
+  ];
 }
