@@ -27,7 +27,7 @@ in
     stylix.iconTheme.light = "Papirus";
     # ghostty
     programs.ghostty = {
-      setting = {
+      settings = {
           theme = "catppuccin-mocha";
           font-name = "Maple Mono NF";
           font-size = 15;
