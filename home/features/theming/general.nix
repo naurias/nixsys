@@ -15,7 +15,7 @@ in
   config = mkIf cfg.enable {
 
     #theming options go here mainly stylix
-    stylix.targets.kitty.enable = false;
+    stylix.targets.ghostty.enable = false;
     # cursor
     stylix.cursor.package = pkgs.bibata-cursors;
     stylix.cursor.name = "Bibata-Modern-Ice";
@@ -25,11 +25,13 @@ in
     stylix.iconTheme.package = pkgs.papirus-icon-theme;
     stylix.iconTheme.dark = "Papirus-Dark";
     stylix.iconTheme.light = "Papirus";
-    # kitty
-    programs.kitty = {
-      font.name = "MapleMono NF";
-      font.size = 14;
-      themeFile = "gruvbox-dark";
+    # ghostty
+    programs.ghostty = {
+      setting = {
+          theme = "catppuccin-mocha";
+          font-name = "Maple Mono NF";
+          font-size = 15;
+        };
     };
 
     qt.enable = true;

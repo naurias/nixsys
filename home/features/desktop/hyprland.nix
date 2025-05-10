@@ -61,7 +61,7 @@ in {
           # active and in active opacity goes here
         };
         windowrulev2 = [
-          "opacity 0.75 ,class:^(kitty)$"
+          "opacity 0.75 ,class:^(ghostty)$"
           "opacity 0.75 ,class:^(emacs)$"
           "opacity 0.75 ,class:^(zathura)$"
         ];
@@ -78,7 +78,7 @@ in {
         "$menu" = ''rofi -show drun -show-icons -run-command "uwsm app -- {cmd}" '';
 
         bind = [
-          "$mod, RETURN, exec,uwsm app -- kitty"
+          "$mod, RETURN, exec,uwsm app -- ghostty"
           "$mod SHIFT, Q, exit,"
           "$mod, W, killactive,"
           "$mod, S, togglefloating,"

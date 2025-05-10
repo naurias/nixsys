@@ -55,8 +55,8 @@
 		tldr
 		zip
 	];
-  # kitty
-  programs.kitty = {
+  # ghostty
+  programs.ghostty = {
     enable = true;
   };
 
