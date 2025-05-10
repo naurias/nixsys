@@ -29,7 +29,7 @@ in
     programs.ghostty = {
       settings = {
           theme = "catppuccin-mocha";
-          font-name = "Maple Mono NF";
+          font-family = "Maple Mono NF";
           font-size = 15;
         };
     };
