@@ -35,7 +35,7 @@
 				}
 			];
 			# add source /run/agenix/${config.home.username}-secrets in initextra for secrets
-			initExtra = ''
+			initContent = ''
 
 				export NIX_PATH="nixpkgs=channel:nixos-unstable"
         export NIX_LOG=info

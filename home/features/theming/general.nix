@@ -28,9 +28,10 @@ in
     # ghostty
     programs.ghostty = {
       settings = {
-          theme = "catppuccin-mocha";
+          theme = "GruvboxDark";
           font-family = "Maple Mono NF";
           font-size = 15;
+          window-decoration = "none";
         };
     };
 

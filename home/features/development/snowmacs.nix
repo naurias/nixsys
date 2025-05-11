@@ -15,13 +15,13 @@ in {
       libvterm
       emacsPackages.vterm
       texliveFull
-      pandoc_3_6
+      pandoc
       maim 
       wl-clipboard
       graphviz
       shfmt
       shellcheck
-      nodejs_23
+      nodePackages_latest.nodejs
     ];
   };
 }
