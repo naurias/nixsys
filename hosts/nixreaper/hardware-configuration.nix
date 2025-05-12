@@ -14,43 +14,37 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/33fbe94b-14f5-493e-92a6-d0ceb339f165";
+    { device = "/dev/disk/by-uuid/20f71e63-812a-42dc-a365-7b31428c09f1";
       fsType = "btrfs";
       options = [ "subvol=@" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
     };
 
   fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/33fbe94b-14f5-493e-92a6-d0ceb339f165";
+    { device = "/dev/disk/by-uuid/20f71e63-812a-42dc-a365-7b31428c09f1";
       fsType = "btrfs";
       options = [ "subvol=@var" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
     };
 
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/20f71e63-812a-42dc-a365-7b31428c09f1";
+      fsType = "btrfs";
+      options = [ "subvol=@home" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
+    };
+
   fileSystems."/.snapshots" =
-    { device = "/dev/disk/by-uuid/33fbe94b-14f5-493e-92a6-d0ceb339f165";
+    { device = "/dev/disk/by-uuid/20f71e63-812a-42dc-a365-7b31428c09f1";
       fsType = "btrfs";
       options = [ "subvol=@snapshots" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/4D11-9608";
+    { device = "/dev/disk/by-uuid/DBFC-4F4E";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/8e1d9d6c-47ca-41cb-8fb2-d93e497d985d";
-      fsType = "btrfs";
-      options = [ "subvol=@home-nix" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
-    };
-
-  fileSystems."/home/SHARED" =
-    { device = "/dev/disk/by-uuid/8e1d9d6c-47ca-41cb-8fb2-d93e497d985d";
-      fsType = "btrfs";
-      options = [ "subvol=@home-shared" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
-    };
-
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/a2ba888e-1cec-4a10-b83e-625ea63012bc"; }
+    [ { device = "/dev/disk/by-uuid/8a4fee2d-3dc7-4867-922e-ccd4733ae8d4"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
