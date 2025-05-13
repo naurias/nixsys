@@ -11,7 +11,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     dotfiles = {
-      url = "git+https://codeberg.org/naurias/dot-nix.git";
+      url = "git+https://github.com/naurias/dot-nix.git";
       flake = false;
     };
     #		agenix.url = "github:ryantm/agenix";

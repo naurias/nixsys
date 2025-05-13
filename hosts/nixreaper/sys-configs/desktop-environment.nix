@@ -9,8 +9,6 @@
     xwayland.enable = true;
   };
   environment.localBinInPath = true;
-  programs.hyprland.enable = true;
-  programs.hyprland.withUWSM = true;
 
   fonts.packages = with pkgs; [
     maple-mono.NF-unhinted

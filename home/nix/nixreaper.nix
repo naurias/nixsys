@@ -27,7 +27,6 @@
       river.enable = true;
       dunst.enable = true;
       gui-apps.enable = true;
-      hyprland.enable = true;
       # since this is not machine specific and i want all systems to have river wm the common user settings for river regardless of hosts are applied
       # enable it only if we want host specific features
     };
@@ -35,7 +34,7 @@
       general.enable = true;
     };
     development = {
-      snowmacs.enable = true; #emacs
+      snowmacs.enable = false; #emacs
       #  lazysnow.enable = true; #neovim
     };
   };

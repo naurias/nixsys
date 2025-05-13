@@ -15,7 +15,8 @@ in
 		home.packages = with pkgs; [
       lxqt.pcmanfm-qt
       zathura
-      mpv 
+      mpv
+      filen-desktop
       vlc
 		];
 	};

@@ -14,14 +14,6 @@
 
 	config = mkIf cfg.enable {
 
-		programs.yambar = {
-			enable = true;
-			settings = {
-				bar {
-
-				};
-			};
-		};
 	# can had home files for wayland dotfiles and dotfile configurations
 	# can add packages
 	

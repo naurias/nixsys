@@ -11,11 +11,9 @@
 		./fonts.nix
 		./dunst.nix
 		./gui-apps.nix
-    ./hyprland.nix
 	];
 	home.packages = with pkgs; [
 		brave
-		cryptomator
 		keepassxc
 		git-credential-keepassxc
 	];

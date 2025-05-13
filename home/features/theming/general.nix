@@ -13,6 +13,7 @@ in
   options.features.theming.general.enable = mkEnableOption "stylix theming for home manager settings";
 
   config = mkIf cfg.enable {
+    services.hyprpaper.enable = true;
 
     #theming options go here mainly stylix
     stylix.targets.ghostty.enable = false;

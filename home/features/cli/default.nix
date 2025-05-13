@@ -41,6 +41,7 @@
     exiftool
 		zsh-fzf-tab
 		fd
+    wl-clipboard
     peazip
     _7zz
 		ffmpeg
@@ -50,6 +51,7 @@
 		fastfetch
 		httpie
 		jq
+    cryfs
 		procs
 		ripgrep
 		tldr
