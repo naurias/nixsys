@@ -8,6 +8,6 @@
 
   extraServices.podman.enable = true;
   extraServices.gaming.enable = true;
-  flakedModules.snowvim.enable = false;
+  flakedModules.snowvim.enable = true;
   flakedModules.stylix.enable = true;
 }

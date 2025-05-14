@@ -14,38 +14,30 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/20f71e63-812a-42dc-a365-7b31428c09f1";
+    { device = "/dev/disk/by-uuid/1344f542-bca5-4018-94e2-cb4f53187c7e";
       fsType = "btrfs";
-      options = [ "subvol=@" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
-    };
-
-  fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/20f71e63-812a-42dc-a365-7b31428c09f1";
-      fsType = "btrfs";
-      options = [ "subvol=@var" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
+      options = [ "subvol=@nix-root" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/20f71e63-812a-42dc-a365-7b31428c09f1";
+    { device = "/dev/disk/by-uuid/1344f542-bca5-4018-94e2-cb4f53187c7e";
       fsType = "btrfs";
-      options = [ "subvol=@home" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
+      options = [ "subvol=@nix-home" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
     };
 
-  fileSystems."/.snapshots" =
-    { device = "/dev/disk/by-uuid/20f71e63-812a-42dc-a365-7b31428c09f1";
+  fileSystems."/var" =
+    { device = "/dev/disk/by-uuid/1344f542-bca5-4018-94e2-cb4f53187c7e";
       fsType = "btrfs";
-      options = [ "subvol=@snapshots" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
+      options = [ "subvol=@nix-var" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/DBFC-4F4E";
+    { device = "/dev/disk/by-uuid/7D4C-D4F2";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/8a4fee2d-3dc7-4867-922e-ccd4733ae8d4"; }
-    ];
+  swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
