@@ -70,17 +70,17 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1745775959,
+        "lastModified": 1747132486,
         "narHash": "sha256-S5OLaij2L3G7wlhU88kGVc0sN2L5e6wwNzqq3js6iHo=",
         "ref": "refs/heads/main",
-        "rev": "c988c4991fc41e394e84c060641fbe2f2eb3ae63",
-        "revCount": 5,
+        "rev": "82cb350b8885133bf8a56be9485381c0c1be38c3",
+        "revCount": 1,
         "type": "git",
-        "url": "https://codeberg.org/naurias/dot-nix.git"
+        "url": "https://github.com/naurias/dot-nix.git"
       },
       "original": {
         "type": "git",
-        "url": "https://codeberg.org/naurias/dot-nix.git"
+        "url": "https://github.com/naurias/dot-nix.git"
       }
     },
     "firefox-gnome-theme": {
