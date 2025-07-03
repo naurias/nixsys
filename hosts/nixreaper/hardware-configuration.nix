@@ -14,30 +14,32 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1344f542-bca5-4018-94e2-cb4f53187c7e";
+    { device = "/dev/disk/by-uuid/4d0624b7-e7ab-43b7-aecf-f5cf20df2355";
       fsType = "btrfs";
-      options = [ "subvol=@nix-root" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
+      options = [ "subvol=@nix" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/1344f542-bca5-4018-94e2-cb4f53187c7e";
+    { device = "/dev/disk/by-uuid/4d0624b7-e7ab-43b7-aecf-f5cf20df2355";
       fsType = "btrfs";
       options = [ "subvol=@nix-home" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
     };
 
   fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/1344f542-bca5-4018-94e2-cb4f53187c7e";
+    { device = "/dev/disk/by-uuid/4d0624b7-e7ab-43b7-aecf-f5cf20df2355";
       fsType = "btrfs";
       options = [ "subvol=@nix-var" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/7D4C-D4F2";
+    { device = "/dev/disk/by-uuid/F74A-F5CD";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/e28d46df-c5ba-4c45-9dc8-472cd9ef99da"; }
+    ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

@@ -17,7 +17,7 @@
         adminAddr = "foo@example.org";
       };
       networking.firewall.allowedTCPPorts = [80]; # same port as that of host config.nix
-      system.stateVersion = "24.05";
+      system.stateVersion = "25.05";
     };
 
 		# the folder data is sharing storage with container
@@ -46,7 +46,7 @@
         adminAddr = "foo@example.org";
       };
       networking.firewall.allowedTCPPorts = [80];
-      system.stateVersion = "24.05";
+      system.stateVersion = "25.05";
     };
     bindMounts = {
       "/root/data" = {
