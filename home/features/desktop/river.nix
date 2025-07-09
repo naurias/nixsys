@@ -25,7 +25,7 @@ in {
 
         map = {
           normal = {
-            "Super Return" = "spawn ghostty";
+            "Super Return" = "spawn kitty";
             "Super D" = "spawn 'rofi -show drun -show-icons'";
             "Super W" = "close";
             "Super+Shift Q" = "exit";

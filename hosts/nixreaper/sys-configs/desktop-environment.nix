@@ -8,6 +8,9 @@
     enable = true;
     xwayland.enable = true;
   };
+  programs.niri = {
+    enable = true;
+  };
   environment.localBinInPath = true;
 
   fonts.packages = with pkgs; [

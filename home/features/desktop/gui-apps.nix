@@ -18,6 +18,7 @@ in
       mpv
       filen-desktop
       vlc
+      qbittorrent
 		];
 	};
 }

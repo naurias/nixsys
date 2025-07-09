@@ -11,6 +11,7 @@
 		./fonts.nix
 		./dunst.nix
 		./gui-apps.nix
+    ./niri.nix
 	];
 	home.packages = with pkgs; [
 		brave

@@ -14,5 +14,6 @@
     sops 
     age 
     ssh-to-age
+    compose2nix
   ];
 }
