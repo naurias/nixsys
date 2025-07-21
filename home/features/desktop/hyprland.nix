@@ -10,6 +10,15 @@ in {
   options.features.desktop.hyprland.enable = mkEnableOption "Hyprland Wayland Compositor";
 
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      grim
+      slurp
+      swappy
+      ydotool
+      hyprpolkitagent
+      hyprland-qtutils # needed for banners and ANR messages
+    ];
+
     programs.waybar = {
       enable = true;
       settings = {
@@ -75,6 +84,21 @@ in {
       enable = true;
       xwayland.enable = true;
       settings = {
+        env = [
+          "NIXOS_OZONE_WL, 1"
+          "XDG_CURRENT_DESKTOP, Hyprland"
+          "XDG_SESSION_TYPE, wayland"
+          "XDG_SESSION_DESKTOP, Hyprland"
+          "GDK_BACKEND, wayland, x11"
+          "CLUTTER_BACKEND, wayland"
+          "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
+          "QT_AUTO_SCREEN_SCALE_FACTOR, 1"
+          "MOZ_ENABLE_WAYLAND, 1"
+          "ELECTRON_OZONE_PLATFORM_HINT,wayland"
+          "GDK_SCALE,1"
+          "QT_SCALE_FACTOR,1"
+        ];
+
         bind = [
           "$mod, Return, exec, kitty"
           "$mod, D, exec, rofi -show drun -show-icons"
@@ -168,6 +192,10 @@ in {
         };
         exec-once = [
           "waybar"
+          "wl-paste --type text --watch cliphist store # Stores only text data"
+          "wl-paste --type image --watch cliphist store # Stores only image data"
+          "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+          "systemctl --user start hyprpolkitagent"
         ];
         "$mod" = "SUPER";
         input = {
