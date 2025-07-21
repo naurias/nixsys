@@ -5,23 +5,25 @@
 	...
 }:
 
-{
-	boot.loader = {
-		efi = {
-			canTouchEfiVariables = true;
-			efiSysMountPoint = "/boot";
-		};
-		grub = {
-			enable = true;
-			efiSupport = true;
-			device = "nodev";
-			useOSProber = true;
-		};
-	};
+let 
+  zfsCompatibleKernelPackages = lib.filterAttrs (
+    name: kernelPackages:
+    (builtins.match "linux_[0-9]+_[0-9]+" name) != null
+    && (builtins.tryEval kernelPackages).success
+    && (!kernelPackages.${config.boot.zfs.package.kernelModuleAttribute}.meta.broken)
+   ) pkgs.linuxKernel.packages;
+   latestKernelPackage = lib.last (
+     lib.sort (a: b: (lib.versionOlder a.kernel.version b.kernel.version)) (
+       builtins.attrValues zfsCompatibleKernelPackages
+       )
+     );
+in
 
-	boot.supportedFilesystems = [
-		"ntfs"
-		"btrfs"
-	];
+
+{
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = latestKernelPackage;
 
 }

@@ -21,8 +21,9 @@
 
 #	Use latest kernel, depending upon nixos channels
 
-	boot.kernelPackages = pkgs.linuxPackages_latest;
+#	boot.kernelPackages = pkgs.linuxPackages_latest;
   
+        networking.hostId = "8425e349";
 
   networking.hostName = "nixreaper"; # Define your hostname.
 

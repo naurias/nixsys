@@ -18,6 +18,7 @@
 			"audio"
 			"video"
 			"qemu-libvirtd"
+      "docker"
 			"kvm"
 			"input"
 			"flatpak"

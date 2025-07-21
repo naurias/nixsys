@@ -1,7 +1,7 @@
 {
 
 	imports = [
-		./podman.nix
+    ./docker.nix
 		./gaming.nix
     ./virtualisation.nix
 	];

@@ -8,8 +8,9 @@
     enable = true;
     xwayland.enable = true;
   };
-  programs.niri = {
+  programs.hyprland = {
     enable = true;
+    xwayland.enable = true;
   };
   environment.localBinInPath = true;
 

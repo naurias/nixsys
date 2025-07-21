@@ -14,31 +14,39 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4d0624b7-e7ab-43b7-aecf-f5cf20df2355";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
+    { device = "zpool/root";
+      fsType = "zfs";
+      options = [ "zfsutil" ];
     };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/4d0624b7-e7ab-43b7-aecf-f5cf20df2355";
-      fsType = "btrfs";
-      options = [ "subvol=@nix-home" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
+  fileSystems."/nix" =
+    { device = "zpool/nix";
+      fsType = "zfs";
+      options = [ "zfsutil" ];
     };
 
   fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/4d0624b7-e7ab-43b7-aecf-f5cf20df2355";
-      fsType = "btrfs";
-      options = [ "subvol=@nix-var" "defaults" "noatime" "space_cache=v2" "discard=async" "compress=zstd" "ssd" ];
+    { device = "zpool/var";
+      fsType = "zfs";
+      options = [ "zfsutil" ];
+    };
+
+  fileSystems."/home" =
+    { device = "zpool/home";
+      fsType = "zfs";
+      options = [ "zfsutil" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/F74A-F5CD";
+    { device = "/dev/disk/by-uuid/AC03-57E8";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/e28d46df-c5ba-4c45-9dc8-472cd9ef99da"; }
+    [ { device = "/dev/sda2";
+	randomEncryption = true;
+      }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -47,7 +55,7 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

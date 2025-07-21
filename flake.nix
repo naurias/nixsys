@@ -17,11 +17,10 @@
     #		agenix.url = "github:ryantm/agenix";
     #   sops-nix.url = "github:Mic92/sops-nix";
 
-    #		disko = {
     nvf.url = "github:notashelf/nvf";
     stylix.url = "github:danth/stylix";
-    niri.url = "github:sodiboo/niri-flake";
     
+    #		disko = {
     #			url = "";
     #			inputs.nixpkgs.follows = "nixpkgs";
     #		};
@@ -35,7 +34,6 @@
     #   disko,
     #   agenix,
     home-manager,
-    niri,
     nixpkgs,
     ...
   } @ inputs: let
@@ -61,8 +59,6 @@
           ./hosts/nixreaper
           nvf.nixosModules.default
           stylix.nixosModules.stylix
-          niri.nixosModules.niri
-          ./overlays/niri-overlay.nix
           #				inputs.disko.nixosModules.disko
           #				agenix.nixosModules.default
         ];
