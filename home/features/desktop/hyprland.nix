@@ -129,6 +129,7 @@ in {
           "$mod,L,movefocus,r"
           "$mod,K,movefocus,u"
           "$mod,J,movefocus,d"
+
           "$mod,1,workspace,1"
           "$mod,2,workspace,2"
           "$mod,3,workspace,3"
@@ -139,8 +140,30 @@ in {
           "$mod,8,workspace,8"
           "$mod,9,workspace,9"
           "$mod,0,workspace,10"
+
+          "$mod,parenleft,workspace,1"
+          "$mod,parenright,workspace,2"
+          "$mod,braceright,workspace,3"
+          "$mod,plus,workspace,4"
+          "$mod,braceleft,workspace,5"
+          "$mod,bracketright,workspace,6"
+          "$mod,bracketleft,workspace,7"
+          "$mod,exclam,workspace,8"
+          "$mod,equal,workspace,9"
+
+          "$mod SHIFT,parenleft,workspace,1"
+          "$mod SHIFT,parenright,workspace,2"
+          "$mod SHIFT,braceright,workspace,3"
+          "$mod SHIFT,plus,workspace,4"
+          "$mod SHIFT,braceleft,workspace,5"
+          "$mod SHIFT,bracketright,workspace,6"
+          "$mod SHIFT,bracketleft,workspace,7"
+          "$mod SHIFT,exclam,workspace,8"
+          "$mod SHIFT,equal,workspace,9"
+
           "$mod SHIFT,V,movetoworkspace,special"
           "$mod,V,togglespecialworkspace"
+
           "$mod SHIFT,1,movetoworkspace,1"
           "$mod SHIFT,2,movetoworkspace,2"
           "$mod SHIFT,3,movetoworkspace,3"
@@ -151,6 +174,7 @@ in {
           "$mod SHIFT,8,movetoworkspace,8"
           "$mod SHIFT,9,movetoworkspace,9"
           "$mod SHIFT,0,movetoworkspace,10"
+
           "$mod CONTROL,right,workspace,e+1"
           "$mod CONTROL,left,workspace,e-1"
           "$mod,mouse_down,workspace, e+1"
@@ -199,7 +223,9 @@ in {
         ];
         "$mod" = "SUPER";
         input = {
-          kb_layout = "us";
+          kb_layout = "us,us";
+          kb_variant = ",dvp";
+          resolve_binds_by_sym = 1;
           numlock_by_default = false;
           repeat_delay = 200;
           follow_mouse = 1;

@@ -46,7 +46,11 @@
    };
 
   # Configure keymap in X11
-   services.xserver.xkb.layout = "us";
+   services.xserver.enable = true;
+   services.xserver.xkb.layout = "us,us";
+   services.xserver.xkb.variant = ",dvp";
+   services.xserver.xkb.options = "grp:alt_shift_toggle";
+
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
