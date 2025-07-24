@@ -59,6 +59,23 @@
       };
     };
 
+    #    notes.obsidian = {
+    #      enable = true;
+    #      setupOpts = {
+    #        completion.nvim_cmp = false;
+    #        daily_notes.folder = "/home/nix/Documents/Obsidian/Vault/RandomNotes";
+    #        #workspaces.name = "Vault";
+    #        #workspaces.path = "/home/nix/Documents/Obsidian/Vault";
+    #        ui = {enable = false;};
+    #        workspaces = [
+    #        {
+    #          name = "Vault";
+    #          path = "/home/nix/Documents/Obsidian/Vault";
+    #        }
+    #        ];
+    #      };
+    #    };
+
     snippets.luasnip.enable = true;
     mini.comment.enable = true;
     mini.snippets.enable = true;
