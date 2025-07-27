@@ -21,6 +21,10 @@
       enable = true;
     };
 
+    utility.preview.markdownPreview = {
+      enable = true;
+    };
+
     git.gitsigns = {
       enable = true;
       codeActions.enable = true;
@@ -58,6 +62,10 @@
         quickfile = {enabled = true;};
       };
     };
+    #    utility.images.image-nvim = {
+    #      enable = true;
+    #      setupOpts.backend = "kitty";
+    #    };
 
     #    notes.obsidian = {
     #      enable = true;

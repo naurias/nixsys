@@ -23,6 +23,9 @@ in {
       obsidian
       obs-studio
       qbittorrent
+      nb
+      w3m
+      pandoc
     ];
     programs.firefox.enable = true;
   };
