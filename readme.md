@@ -41,3 +41,10 @@ for COMMON SERVICES DO USE EXTRAFEATURES. hosts/nixreaper/services IS ONLY FOR S
 MODULES AND OTHER FLAKES
 
 other flakes such as nvf etc are applied as extraServices as in hosts/common/xx and then enabled in hosts/nixreaper/default.nix
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
