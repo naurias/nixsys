@@ -34,10 +34,6 @@
     theming = {
       general.enable = true;
     };
-    development = {
-      snowmacs.enable = false; #emacs
-      #  lazysnow.enable = true; #neovim
-    };
   };
 
   # river configuration depending upon host ie the one in features will be common for users on all systems but this one will be host specific
