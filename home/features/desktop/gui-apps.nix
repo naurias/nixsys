@@ -25,7 +25,10 @@ in {
       qbittorrent
       nb
       w3m
+      texliveFull
+      graphviz
       pandoc
+      go-grip
     ];
     programs.firefox.enable = true;
   };

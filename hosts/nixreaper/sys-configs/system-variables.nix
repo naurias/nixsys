@@ -5,6 +5,6 @@
   ...
 }: {
   environment.variables = {
-    EDITOR = "emacsclient -c";
+    EDITOR = "nvim";
   };
 }

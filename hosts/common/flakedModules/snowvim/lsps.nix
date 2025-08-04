@@ -32,7 +32,8 @@
         lsp.enable = true;
         treesitter.enable = true;
         format.enable = true;
-        extensions.render-markdown-nvim.enable = true;
+        #extensions.render-markdown-nvim.enable = true;
+        extensions.markview-nvim.enable = true;
       };
       ## Language specifics
       yaml = {
