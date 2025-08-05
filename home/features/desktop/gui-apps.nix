@@ -29,6 +29,7 @@ in {
       graphviz
       pandoc
       go-grip
+      mermaid-cli
     ];
     programs.firefox.enable = true;
   };
