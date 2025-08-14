@@ -45,6 +45,7 @@ in {
       php
       gcc
       qutebrowser
+      python313Packages.adblock
       nyxt
       kdePackages.okular
       kdePackages.dolphin
