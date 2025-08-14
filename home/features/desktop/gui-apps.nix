@@ -30,6 +30,26 @@ in {
       pandoc
       go-grip
       mermaid-cli
+      maim
+      graphviz
+      shfmt
+      shellcheck
+      gnumake
+      nodejs
+      cmake
+      nixfmt
+      python3Full
+      isort
+      python313Packages.pytest
+      pipenv
+      php
+      gcc
+      qutebrowser
+      nyxt
+      kdePackages.okular
+      kdePackages.dolphin
+      kdePackages.qtsvg
+      kdePackages.kio-fuse
     ];
     programs.firefox.enable = true;
   };
