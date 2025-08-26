@@ -131,7 +131,7 @@ in {
         "Mod+C".action = center-column;
         "Mod+O".action = toggle-overview;
         "Mod+Return".action = spawn "kitty";
-        "Mod+Shift+Q".action = quit {skip-confirmation = false;};
+        "Alt+Shift+Q".action = quit {skip-confirmation = false;};
         "Mod+Shift+Slash".action = show-hotkey-overlay;
         "Mod+S".action = toggle-window-floating;
         "Mod+Shift+Space".action = switch-focus-between-floating-and-tiling;
@@ -190,6 +190,10 @@ in {
         "Mod+K".action = focus-window-up;
         "Mod+J".action = focus-window-down;
 
+
+        "Mod+Q".action = focus-column-left;
+        "Mod+E".action = focus-column-right;
+
         "Mod+1".action = focus-workspace 1;
         "Mod+2".action = focus-workspace 2;
         "Mod+3".action = focus-workspace 3;
@@ -211,6 +215,9 @@ in {
         "Mod+Shift+Right".action = move-column-right;
         "Mod+Shift+Up".action = move-window-down;
         "Mod+Shift+Down".action = move-window-up;
+
+        "Mod+Shift+Q".action = move-column-left;
+        "Mod+Shift+E".action = move-column-right;
 
         "Mod+Shift+H".action = move-column-left;
         "Mod+Shift+L".action = move-column-right;
