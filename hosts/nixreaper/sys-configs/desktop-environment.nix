@@ -8,9 +8,13 @@
     enable = true;
     xwayland.enable = true;
   };
-  programs.hyprland = {
+  #  programs.hyprland = {
+  #  enable = true;
+  #  xwayland.enable = true;
+  #};
+  programs.niri = {
     enable = true;
-    xwayland.enable = true;
+    package = pkgs.niri-unstable;
   };
   environment.localBinInPath = true;
 

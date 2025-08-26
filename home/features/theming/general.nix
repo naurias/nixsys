@@ -34,8 +34,6 @@ in
       font.size = 14;
       themeFile = "gruvbox-dark";
       settings = {
-        background_opacity = 0.8;
-        background_blur = 2;
       };
     };
     qt.enable = true;

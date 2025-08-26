@@ -6,6 +6,7 @@
     ./dunst.nix
     ./gui-apps.nix
     ./hyprland.nix
+    ./niri.nix
   ];
 
   #rofi-wayland
