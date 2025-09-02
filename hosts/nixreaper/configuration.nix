@@ -47,10 +47,17 @@
 
   # Configure keymap in X11
    services.xserver.enable = true;
-   services.xserver.xkb.layout = "us,us";
-   services.xserver.xkb.variant = ",dvp";
+   services.xserver.xkb.layout = "us,graphite";
+   services.xserver.xkb.variant = ",";
    services.xserver.xkb.options = "grp:alt_shift_toggle";
-
+   services.xserver.xkb.extraLayouts = {
+     graphite = {
+       description = "Graphite layout";
+       languages = [ "eng" ];
+       symbolsFile = ./graphite.xkb;
+     };
+   }
+   ;
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.

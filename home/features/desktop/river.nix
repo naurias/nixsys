@@ -91,7 +91,7 @@ in {
         						riverctl map normal Super Down  send-layout-cmd rivertile "main-location bottom"
         						riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
 
-                    riverctl map normal Super+Shift N spawn "riverctl keyboard-layout 'us(dvp)'"
+                    riverctl map normal Super+Shift N spawn "riverctl keyboard-layout 'graphite'"
                     riverctl map normal Super N spawn "riverctl keyboard-layout 'us'"
 
         						# Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
@@ -119,52 +119,13 @@ in {
         						done
 
 
-                    riverctl map normal Super parenleft set-focused-tags 1
-                    riverctl map normal Super parenright set-focused-tags 2
-                    riverctl map normal Super braceright set-focused-tags 4
-                    riverctl map normal Super plus set-focused-tags 8
-                    riverctl map normal Super braceleft set-focused-tags 16
-                    riverctl map normal Super bracketright set-focused-tags 32
-                    riverctl map normal Super bracketleft set-focused-tags 64
-                    riverctl map normal Super exclam set-focused-tags 128
-                    riverctl map normal Super equal set-focused-tags 256
-
-
-                    riverctl map normal Super+Shift parenleft set-view-tags 1
-                    riverctl map normal Super+Shift parenright set-view-tags 2
-                    riverctl map normal Super+Shift braceright set-view-tags 4
-                    riverctl map normal Super+Shift plus set-view-tags 8
-                    riverctl map normal Super+Shift braceleft set-view-tags 16
-                    riverctl map normal Super+Shift bracketright set-view-tags 32
-                    riverctl map normal Super+Shift bracketleft set-view-tags 64
-                    riverctl map normal Super+Shift exclam set-view-tags 128
-                    riverctl map normal Super+Shift equal set-view-tags 256
 
                     # Focus the whole tag/workspace to current screen 
 
 
-                    riverctl map normal Super+Control parenleft toggle-focused-tags 1
-                    riverctl map normal Super+Control parenright toggle-focused-tags 2
-                    riverctl map normal Super+Control braceright toggle-focused-tags 4
-                    riverctl map normal Super+Control plus toggle-focused-tags 8
-                    riverctl map normal Super+Control braceleft toggle-focused-tags 16
-                    riverctl map normal Super+Control bracketright toggle-focused-tags 32
-                    riverctl map normal Super+Contorl bracketleft toggle-focused-tags 64
-                    riverctl map normal Super+Control exclam toggle-focused-tags 128
-                    riverctl map normal Super+Control equal toggle-focused-tags 256
-
                     # Focuse currently active window to the respective tags i.e the window will be at more than one workspaces
 
 
-                    riverctl map normal Super+Shift+Control parenleft toggle-view-tags 1
-                    riverctl map normal Super+Shift+Control parenright toggle-view-tags 2
-                    riverctl map normal Super+Shift+Control braceright toggle-view-tags 4
-                    riverctl map normal Super+Shift+Control plus toggle-view-tags 8
-                    riverctl map normal Super+Shift+Control braceleft toggle-view-tags 16
-                    riverctl map normal Super+Shift+Control bracketright toggle-view-tags 32
-                    riverctl map normal Super+Shift+Control bracketleft toggle-view-tags 64
-                    riverctl map normal Super+Shift+Control exclam toggle-view-tags 128
-                    riverctl map normal Super+Shift+Control equal toggle-view-tags 256
 
 
         						for mode in normal locked

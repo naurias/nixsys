@@ -82,8 +82,8 @@ in {
 
     programs.niri.settings = {
       input.keyboard.xkb = {
-        layout = "us,us";
-        variant = "dvp,";
+        layout = "us,graphite";
+        variant = ",";
         options = "grp:alt_space_toggle";
       };
       outputs."eDP-1" = {
