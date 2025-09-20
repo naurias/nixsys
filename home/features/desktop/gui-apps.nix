@@ -44,14 +44,10 @@ in {
       pipenv
       php
       gcc
-      qutebrowser
-      python313Packages.adblock
-      nyxt
       kdePackages.okular
       kdePackages.dolphin
       kdePackages.qtsvg
       kdePackages.kio-fuse
     ];
-    programs.firefox.enable = true;
   };
 }

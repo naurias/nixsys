@@ -17,6 +17,7 @@
 			"libvirtd"
 			"audio"
 			"video"
+      "podman"
 			"qemu-libvirtd"
       "docker"
 			"kvm"

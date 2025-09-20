@@ -15,9 +15,6 @@ in {
       lazygit
       gcc
     ];
-    programs = {
-    firefox.enable = true;
-    };
 
   };
 }

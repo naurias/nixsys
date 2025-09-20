@@ -16,9 +16,6 @@
     };
     #		agenix.url = "github:ryantm/agenix";
     #   sops-nix.url = "github:Mic92/sops-nix";
-    niri = {
-      url = "github:sodiboo/niri-flake";
-    };
 
     nvf.url = "github:notashelf/nvf";
     stylix.url = "github:danth/stylix";
@@ -33,7 +30,6 @@
     self,
     dotfiles,
     nvf,
-    niri,
     stylix,
     #   disko,
     #   agenix,
@@ -63,8 +59,6 @@
           ./hosts/nixreaper
           nvf.nixosModules.default
           stylix.nixosModules.stylix
-          niri.nixosModules.niri
-          ./overlays/niri-overlay.nix
           #				inputs.disko.nixosModules.disko
           #				agenix.nixosModules.default
         ];

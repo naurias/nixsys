@@ -223,8 +223,9 @@ in {
         ];
         "$mod" = "SUPER";
         input = {
-          kb_layout = "us,us";
-          kb_variant = ",dvp";
+          kb_layout = "us,graphite";
+          kb_variant = ",";
+          kb_options = "grp:alt_shift_toggle";
           resolve_binds_by_sym = 1;
           numlock_by_default = false;
           repeat_delay = 200;
