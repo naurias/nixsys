@@ -20,7 +20,6 @@ in {
       filen-desktop
       vlc
       bitwarden
-      obsidian
       obs-studio
       qbittorrent
       nb
@@ -38,9 +37,9 @@ in {
       nodejs
       cmake
       nixfmt
-      python3Full
+      python312
       isort
-      python313Packages.pytest
+      python312Packages.pytest
       pipenv
       php
       gcc

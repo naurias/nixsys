@@ -4,10 +4,15 @@
   pkgs,
   ...
 }: {
-    programs.hyprland = {
+  programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
+  programs.river = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   environment.localBinInPath = true;
 
   fonts.packages = with pkgs; [

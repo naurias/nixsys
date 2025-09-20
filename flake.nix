@@ -14,6 +14,7 @@
       url = "git+https://github.com/naurias/dot-nix.git";
       flake = false;
     };
+
     #		agenix.url = "github:ryantm/agenix";
     #   sops-nix.url = "github:Mic92/sops-nix";
 

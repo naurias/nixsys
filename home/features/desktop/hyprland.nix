@@ -141,26 +141,6 @@ in {
           "$mod,9,workspace,9"
           "$mod,0,workspace,10"
 
-          "$mod,parenleft,workspace,1"
-          "$mod,parenright,workspace,2"
-          "$mod,braceright,workspace,3"
-          "$mod,plus,workspace,4"
-          "$mod,braceleft,workspace,5"
-          "$mod,bracketright,workspace,6"
-          "$mod,bracketleft,workspace,7"
-          "$mod,exclam,workspace,8"
-          "$mod,equal,workspace,9"
-
-          "$mod SHIFT,parenleft,workspace,1"
-          "$mod SHIFT,parenright,workspace,2"
-          "$mod SHIFT,braceright,workspace,3"
-          "$mod SHIFT,plus,workspace,4"
-          "$mod SHIFT,braceleft,workspace,5"
-          "$mod SHIFT,bracketright,workspace,6"
-          "$mod SHIFT,bracketleft,workspace,7"
-          "$mod SHIFT,exclam,workspace,8"
-          "$mod SHIFT,equal,workspace,9"
-
           "$mod SHIFT,V,movetoworkspace,special"
           "$mod,V,togglespecialworkspace"
 
