@@ -6,6 +6,7 @@
 {
 	imports = [
     ./general.nix
+    ./kitty.nix
 	];
 
 

@@ -4,17 +4,13 @@
   pkgs,
   ...
 }:
-
-with lib; let 
+with lib; let
   cfg = config.features.theming.general;
-in 
-{
-
+in {
   options.features.theming.general.enable = mkEnableOption "stylix theming for home manager settings";
 
   config = mkIf cfg.enable {
     services.hyprpaper.enable = true;
-    stylix.targets.kitty.enable = false;
 
     #theming options go here mainly stylix
     # cursor
@@ -27,17 +23,7 @@ in
     stylix.iconTheme.dark = "Papirus-Dark";
     stylix.iconTheme.light = "Papirus";
 
-
     # kitty
-    programs.kitty = {
-      font.name = "Maple Mono NF";
-      font.size = 14;
-      themeFile = "gruvbox-dark";
-      settings = {
-        background_opacity = 0.8;
-        background_blur = 2;
-      };
-    };
     qt.enable = true;
     gtk.enable = true;
   };

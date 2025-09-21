@@ -2,6 +2,6 @@
   imports = [
     ./snowvim
     ./stylix.nix
-    ./emacs.nix
+    #./emacs.nix
   ];
 }
