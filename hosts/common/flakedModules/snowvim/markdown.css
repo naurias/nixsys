@@ -1,0 +1,159 @@
+/* Gruvbox Markdown Styling with Ubuntu Sans & Colored Checkboxes */
+
+.markdown-body {
+  font-family: "Ubuntu Sans", "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  color: #ebdbb2; /* Gruvbox fg */
+  line-height: 1.6;
+  word-wrap: break-word;
+  padding: 45px;
+  background: #282828; /* Gruvbox dark bg */
+  border: 1px solid #3c3836;
+  border-radius: 0 0 3px 3px;
+}
+
+/* Headings */
+.markdown-body h1 { font-size: 2.25em; color: #fb4934; border-bottom: 1px solid #3c3836; }
+.markdown-body h2 { font-size: 1.75em; color: #fabd2f; border-bottom: 1px solid #3c3836; }
+.markdown-body h3 { font-size: 1.5em;  color: #b8bb26; }
+.markdown-body h4 { font-size: 1.25em; color: #83a598; }
+.markdown-body h5 { font-size: 1em;    color: #d3869b; }
+.markdown-body h6 { font-size: 1em;    color: #928374; }
+
+/* Lists */
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+/* Custom list marker colors */
+.markdown-body ul li::marker,
+.markdown-body ol li::marker {
+  color: #fabd2f; /* Level 1: yellow */
+}
+.markdown-body ul ul li::marker,
+.markdown-body ol ul li::marker,
+.markdown-body ul ol li::marker,
+.markdown-body ol ol li::marker {
+  color: #b8bb26; /* Level 2: green */
+}
+.markdown-body ul ul ul li::marker,
+.markdown-body ol ul ul li::marker,
+.markdown-body ul ol ul li::marker,
+.markdown-body ol ol ul li::marker {
+  color: #83a598; /* Level 3+: blue */
+}
+
+/* Blockquote */
+.markdown-body blockquote {
+  margin: 0;
+  padding: 0 15px;
+  color: #a89984;
+  border-left: 4px solid #665c54;
+}
+
+/* Tables */
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body table tr {
+  background-color: #282828;
+  border-top: 1px solid #3c3836;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #32302f;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #3c3836;
+  color: #ebdbb2;
+}
+
+/* Code blocks */
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #1d2021;
+  border-radius: 3px;
+  color: #ebdbb2;
+}
+.markdown-body pre code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 100%;
+  background-color: transparent;
+}
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 85%;
+  color: #d3869b; /* purple for inline code */
+  background-color: #3c3836;
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+}
+
+/* Links */
+.markdown-body a {
+  color: #83a598;
+  text-decoration: none;
+}
+.markdown-body a:hover {
+  color: #d3869b;
+  text-decoration: underline;
+}
+
+/* Images */
+.markdown-body img {
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #1d2021;
+}
+
+/* Emphasis */
+.markdown-body strong { color: #fbf1c7; }
+.markdown-body em { color: #fabd2f; }
+.markdown-body del { color: #928374; }
+
+/* Task list */
+.task-list-item {
+  list-style-type: none;
+}
+.task-list-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.1em;
+  height: 1.1em;
+  margin: 0 0.5em 0.25em -1.6em;
+  border: 2px solid #928374; /* gray border */
+  border-radius: 3px;
+  background-color: #282828;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+}
+
+/* Hover */
+.task-list-item input[type="checkbox"]:hover {
+  border-color: #fabd2f; /* yellow highlight */
+}
+
+/* Checked state */
+.task-list-item input[type="checkbox"]:checked {
+  background-color: #b8bb26; /* green fill */
+  border-color: #b8bb26;
+}
+.task-list-item input[type="checkbox"]:checked::after {
+  content: "✔";
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  font-size: 0.9em;
+  color: #282828; /* dark bg checkmark */
+}
+

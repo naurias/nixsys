@@ -8,6 +8,9 @@
     enable = true;
     settings.vim = {
       enableLuaLoader = true;
+      globals = {
+        mkdp_markdown_css = "/home/nix/nixsys/hosts/common/flakedModules/snowvim/markdown.css";
+      };
 
       theme = {
         enable = true;
