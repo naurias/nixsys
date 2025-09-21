@@ -215,7 +215,7 @@ Now install nixos with `nixos-install`
 
 ## Flake installation 
 
->[!WARNING] WARNING 
+>[!WARNING] 
 >By default this flake creates user nix and host nixreaper. If you want to use your own names be sure to replace them in all files since i'm not using their variables
 
 - After installing nixos boot into the new system and copy [this repo](https://github.com/naurias/nixsys) in your home directory. The folder is name `nixsys`. Copy the `hardware-configuration.nix` from `/etc/nixos/hardware-configuration.nix` to `/home/<username>/nixsys/hosts/nixreaper/hardware-configuration.nix`
