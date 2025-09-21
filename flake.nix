@@ -14,6 +14,8 @@
       url = "git+https://github.com/naurias/dot-nix.git";
       flake = false;
     };
+    #flake-parts.url = "github:hercules-ci/flake-parts";
+    #mango.url = "github:DreamMaoMao/mango";
 
     #		agenix.url = "github:ryantm/agenix";
     #   sops-nix.url = "github:Mic92/sops-nix";
@@ -32,6 +34,7 @@
     dotfiles,
     nvf,
     stylix,
+    #flake-parts,
     #   disko,
     #   agenix,
     home-manager,
@@ -60,6 +63,8 @@
           ./hosts/nixreaper
           nvf.nixosModules.default
           stylix.nixosModules.stylix
+            #inputs.mango.nixosModules.mango
+
           #				inputs.disko.nixosModules.disko
           #				agenix.nixosModules.default
         ];
@@ -71,6 +76,8 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home/nix/nixreaper.nix
+            #inputs.mango.hmModules.mango
+            #./modules/home-manager/mango.nix
         ];
       };
     };

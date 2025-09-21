@@ -43,6 +43,8 @@ in {
       pipenv
       php
       gcc
+      vivaldi
+      vivaldi-ffmpeg-codecs
       kdePackages.okular
       kdePackages.dolphin
       kdePackages.qtsvg

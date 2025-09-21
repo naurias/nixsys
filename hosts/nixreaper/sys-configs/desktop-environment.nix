@@ -13,6 +13,9 @@
     xwayland.enable = true;
   };
 
+  #programs.mango = {
+  #  enable = true;
+  #};
   environment.localBinInPath = true;
 
   fonts.packages = with pkgs; [

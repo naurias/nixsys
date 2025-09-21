@@ -10,7 +10,7 @@
       # example = prev.example.overrideAttrs (oldAttrs: rec {
       # });
 			
-			vivaldi = import ./mods/vivaldi.nix { inherit prev; };
+      # vivaldi = import ./mods/vivaldi.nix { inherit prev; };
 
 
 		};
