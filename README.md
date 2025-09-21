@@ -88,7 +88,7 @@ SWAP=/dev/disk/by-id/nvme-SKHynix_HFS512GDE9X081N_FNB6N634510106K5O-part2
 DISK=/dev/disk/by-id/nvme-SKHynix_HFS512GDE9X081N_FNB6N634510106K5O-part3
 ```
 
-> [!NOTE] Note 
+> [!NOTE]
 >
 > It is often recommended to specify the drive using the device ID/UUID to prevent incorrect configuration, but it is also possible to use the device name (e.g. /dev/sda). See also: [Zpool created with bus-based disk names](https://wiki.nixos.org/wiki/ZFS#Zpool_created_with_bus-based_disk_names), [Persistent block device naming - ArchWiki](https://wiki.archlinux.org/title/Persistent_block_device_naming)
 
