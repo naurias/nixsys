@@ -14,14 +14,6 @@ in {
       emacs-pgtk
       libvterm
       emacsPackages.vterm
-      texliveFull
-      pandoc
-      maim 
-      wl-clipboard
-      graphviz
-      shfmt
-      shellcheck
-      nodePackages_latest.nodejs
     ];
   };
 }

@@ -30,6 +30,9 @@
       general.enable = true;
       kitty.enable = true;
     };
+    development = {
+      snowmacs.enable = true;
+    };
     apps = {
       terminals.enable = true;
       utils.enable = true;
