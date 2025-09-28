@@ -14,6 +14,7 @@ in {
       emacs-pgtk
       libvterm
       emacsPackages.vterm
+      nixfmt
     ];
   };
 }
