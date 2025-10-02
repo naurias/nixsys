@@ -9,6 +9,5 @@
     ./pass.nix
     ./media.nix
     ./filers.nix
-
   ];
 }

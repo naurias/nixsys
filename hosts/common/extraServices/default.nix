@@ -6,6 +6,7 @@
     ./virtualisation.nix
     ./flatpak.nix
     ./vpn.nix
+    ./podman.nix
 	];
 
 }

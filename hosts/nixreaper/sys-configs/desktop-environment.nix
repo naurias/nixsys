@@ -8,10 +8,10 @@
     enable = true;
     xwayland.enable = true;
   };
-  programs.river = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  #  programs.river = {
+  #  enable = true;
+  #  xwayland.enable = true;
+  #};
 
   #programs.mango = {
   #  enable = true;
@@ -22,6 +22,8 @@
     maple-mono.NF-unhinted
     ubuntu-sans
     nerd-fonts.symbols-only
+    nerd-fonts.fira-code
+    cascadia-code
   ];
 
   services.displayManager.sddm = {

@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  inputs,
   pkgs,
   ...
 }:
@@ -9,13 +10,10 @@ with lib; let
 in {
   options.features.apps.browsers.enable = mkEnableOption "Terminal emulatros";
 
-  config =
-    mkIf cfg.enable {
-      home.packages = with pkgs; [
-        vivaldi
-        vivaldi-ffmpeg-codecs
-        w3m
-        brave
-      ];
-    };
+  config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      w3m
+      brave
+    ];
+  };
 }

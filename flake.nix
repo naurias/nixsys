@@ -8,35 +8,31 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     dotfiles = {
       url = "git+https://github.com/naurias/dot-nix.git";
       flake = false;
     };
-    #flake-parts.url = "github:hercules-ci/flake-parts";
-    #mango.url = "github:DreamMaoMao/mango";
-
-    #		agenix.url = "github:ryantm/agenix";
-    #   sops-nix.url = "github:Mic92/sops-nix";
-
+    mango = {
+      url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvf.url = "github:notashelf/nvf";
     stylix.url = "github:danth/stylix";
-
-    #		disko = {
-    #			url = "";
-    #			inputs.nixpkgs.follows = "nixpkgs";
-    #		};
   };
 
   outputs = {
     self,
+    determinate,
     dotfiles,
     nvf,
     stylix,
     #flake-parts,
     #   disko,
     #   agenix,
+    mango,
     home-manager,
     nixpkgs,
     ...
@@ -63,7 +59,9 @@
           ./hosts/nixreaper
           nvf.nixosModules.default
           stylix.nixosModules.stylix
-            #inputs.mango.nixosModules.mango
+          inputs.mango.nixosModules.mango
+          determinate.nixosModules.default
+          ./modules/sys-modules/mangosys.nix
 
           #				inputs.disko.nixosModules.disko
           #				agenix.nixosModules.default
@@ -76,8 +74,8 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home/nix/nixreaper.nix
-            #inputs.mango.hmModules.mango
-            #./modules/home-manager/mango.nix
+          inputs.mango.hmModules.mango
+          ./modules/home-manager/mango.nix
         ];
       };
     };

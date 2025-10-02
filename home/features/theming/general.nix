@@ -10,6 +10,7 @@ in {
   options.features.theming.general.enable = mkEnableOption "stylix theming for home manager settings";
 
   config = mkIf cfg.enable {
+
     services.hyprpaper.enable = true;
 
     #theming options go here mainly stylix
@@ -22,7 +23,6 @@ in {
     stylix.iconTheme.package = pkgs.papirus-icon-theme;
     stylix.iconTheme.dark = "Papirus-Dark";
     stylix.iconTheme.light = "Papirus";
-
     # kitty
     qt.enable = true;
     gtk.enable = true;

@@ -24,7 +24,7 @@
       fonts.enable = true;
       dunst.enable = true;
       hyprland.enable = true;
-      river.enable = true;
+      river.enable = false;
     };
     theming = {
       general.enable = true;
