@@ -11,23 +11,25 @@ in {
 
   config = mkIf cfg.enable {
     stylix.enable = true;
-    stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-    stylix.image = ./1.jpg;
+    stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    stylix.image = ./1.png;
 
     # Fonts
-    #    stylix.fonts = {
+    stylix.fonts = {
       #  sizes = {
       #   terminal = 14;
-    # };
-      # monospace = {
-      #   package = pkgs.maple-mono.NF-unhinted;
-      #  name = "MapleMono NF";
-    # };
-    #};
-
+      # };
+      monospace = {
+        package = pkgs.nerd-fonts.fira-code;
+        name = "FiraCode Nerd Font";
+      };
+      sansSerif = {
+        package = pkgs.ubuntu-sans;
+        name = "Ubuntu Sans";
+      };
+    };
 
     # Disabling some options
     stylix.targets.nvf.enable = false;
-
   };
 }

@@ -14,8 +14,8 @@
 
       theme = {
         enable = true;
-        name = "gruvbox";
-        style = "dark";
+        name = "rose-pine";
+        style = "main";
       };
 
       options = {

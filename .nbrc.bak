@@ -18,12 +18,40 @@ export NB_DEFAULT_EXTENSION="${NB_DEFAULT_EXTENSION:-md}" # Set by `nb` • Mon 
 
 
 export NB_CUSTOM_CSS='
-  body { background:#282828; color:#ebdbb2; font-family:"Ubuntu Sans",sans-serif; }
-  h1 { color:#cc241d; }
-  h2 { color:#d79921; }
-  h3 { color:#98971a; }
-  a { color:#458588; }
-  a:hover { color:#689d6a; }
-  code, pre { background:#3c3836; color:#d65d0e; border-radius:4px; }
-  th { background:#504945; color:#d79921; }
+body {
+  background: #191724; /* base */
+  color: #e0def4; /* text */
+  font-family: "Ubuntu Sans", sans-serif;
+}
+
+h1 {
+  color: #eb6f92; /* love */
+}
+
+h2 {
+  color: #f6c177; /* gold */
+}
+
+h3 {
+  color: #9ccfd8; /* foam */
+}
+
+a {
+  color: #c4a7e7; /* iris */
+}
+
+a:hover {
+  color: #31748f; /* pine */
+}
+
+code, pre {
+  background: #26233a; /* surface */
+  color: #ebbcba; /* rose tone */
+  border-radius: 4px;
+}
+
+th {
+  background: #1f1d2e; /* overlay */
+  color: #f6c177; /* gold */
+}
 '

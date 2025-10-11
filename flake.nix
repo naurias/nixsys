@@ -10,7 +10,7 @@
     };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     dotfiles = {
       url = "git+https://github.com/naurias/dot-nix.git";
       flake = false;
@@ -21,6 +21,10 @@
     };
     nvf.url = "github:notashelf/nvf";
     stylix.url = "github:danth/stylix";
+    #nur = {
+    #  url = "github:nix-community/NUR";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs = {
@@ -28,6 +32,7 @@
     determinate,
     dotfiles,
     nvf,
+    #nur,
     stylix,
     #flake-parts,
     #   disko,
@@ -62,6 +67,8 @@
           inputs.mango.nixosModules.mango
           determinate.nixosModules.default
           ./modules/sys-modules/mangosys.nix
+            #nur.modules.nixos.default
+            #nur.legacyPackages.x86_64-linux.repos.iopq.modules.xraya
 
           #				inputs.disko.nixosModules.disko
           #				agenix.nixosModules.default

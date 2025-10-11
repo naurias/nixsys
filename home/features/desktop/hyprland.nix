@@ -225,6 +225,12 @@ in {
         };
         decoration = {
           rounding = 5;
+          blur = {
+            enabled = true;
+            size = 3;
+            passes = 4;
+            new_optimizations = true;
+          };
         };
         master = {
           new_status = "master";

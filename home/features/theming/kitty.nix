@@ -14,7 +14,7 @@ in {
     programs.kitty = {
       font.name = "FiraCodeNerdFont";
       font.size = 14;
-      themeFile = "gruvbox-dark";
+      themeFile = "rose-pine";
       settings = {
         background_opacity = 0.8;
         background_blur = 2;

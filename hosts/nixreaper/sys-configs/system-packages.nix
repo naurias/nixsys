@@ -1,5 +1,6 @@
 {
   pkgs,
+  nur,
   ...
 }: {
   environment.systemPackages = with pkgs; [
@@ -16,4 +17,8 @@
     ssh-to-age
     compose2nix
   ];
+  programs.nh = {
+    enable = true;
+    flake = "/home/nix/nixsys";
+  };
 }
