@@ -11,7 +11,7 @@ in {
 
   config = mkIf cfg.enable {
 
-    services.hyprpaper.enable = true;
+    services.swww.enable = true;
 
     #theming options go here mainly stylix
     # cursor
