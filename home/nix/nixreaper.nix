@@ -25,6 +25,7 @@
       dunst.enable = true;
       hyprland.enable = true;
       river.enable = false;
+      mango.enable = true;
     };
     theming = {
       general.enable = true;
