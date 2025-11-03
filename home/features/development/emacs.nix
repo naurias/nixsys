@@ -11,7 +11,10 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      emacs-pgtk
+      ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
+        epkgs: [epkgs.vterm]
+      ))
+      libvterm
       nixfmt
     ];
   };
