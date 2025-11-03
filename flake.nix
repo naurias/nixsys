@@ -8,7 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     dotfiles = {
@@ -29,7 +28,6 @@
 
   outputs = {
     self,
-    determinate,
     dotfiles,
     nvf,
     #nur,
@@ -65,7 +63,6 @@
           nvf.nixosModules.default
           stylix.nixosModules.stylix
           inputs.mango.nixosModules.mango
-          determinate.nixosModules.default
           ./modules/sys-modules/mangosys.nix
             #nur.modules.nixos.default
             #nur.legacyPackages.x86_64-linux.repos.iopq.modules.xraya

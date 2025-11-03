@@ -14,7 +14,7 @@ in {
       home.packages = with pkgs; [
         keepassxc
         git-credential-keepassxc
-        bitwarden
+        bitwarden-desktop
       ];
     };
 }

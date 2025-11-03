@@ -20,12 +20,13 @@ in
 		};
 		programs.steam.enable = true;
 		programs.steam.gamescopeSession.enable = true;
-		programs.gamemode.enable = true;
+    # not needed due in modern dirivers
+    #programs.gamemode.enable = true;
 		environment.sessionVariables = {
 			STEAM_EXTRA_COMPAT_TOOLS_PATH = "/home/nix/.steam/root/compatibilitytools.d";
 		};
 		environment.systemPackages = with pkgs; [
-			protonup
+			protonup-ng
 			steam-run
 			wineWowPackages.stagingFull
 			lutris
