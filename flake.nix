@@ -20,17 +20,17 @@
     };
     nvf.url = "github:notashelf/nvf";
     stylix.url = "github:danth/stylix";
-    #nur = {
-    #  url = "github:nix-community/NUR";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     dotfiles,
     nvf,
-    #nur,
+    nur,
     stylix,
     #flake-parts,
     #   disko,
@@ -64,8 +64,8 @@
           stylix.nixosModules.stylix
           inputs.mango.nixosModules.mango
           ./modules/sys-modules/mangosys.nix
-          #nur.modules.nixos.default
-          #nur.legacyPackages.x86_64-linux.repos.iopq.modules.xraya
+          nur.modules.nixos.default
+          nur.legacyPackages.x86_64-linux.repos.iopq.modules.xraya
 
           #				inputs.disko.nixosModules.disko
           #				agenix.nixosModules.default

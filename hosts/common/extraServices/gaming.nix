@@ -30,6 +30,7 @@ in
 			steam-run
 			wineWowPackages.stagingFull
 			lutris
+      faugus-launcher
 		];
 	};
 

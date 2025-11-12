@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     wget
     git
-    htop
     brightnessctl
     wireguard-tools
     protonvpn-gui

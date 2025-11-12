@@ -2,6 +2,7 @@
   config,
   lib,
   inputs,
+  nur,
   pkgs,
   ...
 }:
@@ -15,5 +16,24 @@ in {
       w3m
       brave
     ];
+    programs.firefox = {
+      enable = true;
+      profiles = {
+        nix = {
+          isDefault = true;
+          extensions = {
+            force = true;
+            packages = with pkgs.nur.repos.rycee.firefox-addons; [
+              ublock-origin
+              single-file
+              bitwarden
+              proton-vpn
+              karakeep
+              varia-integrator
+            ];
+          };
+        };
+      };
+    };
   };
 }

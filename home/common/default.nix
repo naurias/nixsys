@@ -3,6 +3,7 @@
 	lib,
 	outputs,
 	pkgs,
+  inputs,
 	...
 }:
 
@@ -15,6 +16,8 @@
 			outputs.overlays.modifications
 			outputs.overlays.stable-packages
 			
+
+      inputs.nur.overlays.default
 			# overlays from other nix flakes can be added as well
 			# neovim-nightly-overlay.overlay.default
 

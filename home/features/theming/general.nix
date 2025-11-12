@@ -12,7 +12,10 @@ in {
   config = mkIf cfg.enable {
 
     services.swww.enable = true;
-
+    
+    # Firefox 
+    stylix.targets.firefox.profileNames = [ "nix" ];
+    stylix.targets.firefox.colorTheme.enable = true;
     #theming options go here mainly stylix
     # cursor
     stylix.cursor.package = pkgs.bibata-cursors;

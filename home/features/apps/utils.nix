@@ -19,11 +19,10 @@ in {
       fd
       wl-clipboard
       peazip
-      _7zz
+      _7zz-rar
       ffmpeg
       ffmpegthumbnailer
       poppler
-      htop
       fastfetch
       httpie
       jq
@@ -42,8 +41,9 @@ in {
       nodejs
       cmake
       gcc
-      php 
+      php
       python312
     ];
+    programs.btop.enable = true;
   };
 }

@@ -1,0 +1,6 @@
+{config, pkgs, lib, inputs, ...}:
+{
+  nixpkgs.overlays = [
+    inputs.nur.overlay
+  ];
+}
