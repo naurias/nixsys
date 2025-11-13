@@ -13,6 +13,7 @@ in {
     home.packages = with pkgs; [
       coreutils
       unzip
+      aria2
       oh-my-posh
       exiftool
       zsh-fzf-tab

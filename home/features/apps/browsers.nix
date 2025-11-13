@@ -29,7 +29,7 @@ in {
               bitwarden
               proton-vpn
               karakeep
-              varia-integrator
+              aria2-integration
             ];
           };
         };
