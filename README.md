@@ -8,7 +8,7 @@ Contentes
 # Features
 - Flake with integrated home-manager and modules
 - ZFS file system
-- Hyprland and River wayland compoistors
+- Hyprland and Mangowc wayland compoistors
 - Kitty terminal 
 - Stylix theme (Gruvbox dark)
 - Multiple host and users support
