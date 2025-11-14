@@ -1,6 +1,6 @@
 {
   imports = [
-    #./snowvim
+    ./snowvim
     ./stylix.nix
     #./emacs.nix
   ];

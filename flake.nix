@@ -18,7 +18,7 @@
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #nvf.url = "github:notashelf/nvf";
+    nvf.url = "github:notashelf/nvf";
     stylix.url = "github:danth/stylix";
     nur = {
       url = "github:nix-community/NUR";
@@ -29,7 +29,7 @@
   outputs = {
     self,
     dotfiles,
-    #nvf,
+    nvf,
     nur,
     stylix,
     #flake-parts,
@@ -60,7 +60,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/nixreaper
-          #nvf.nixosModules.default
+          nvf.nixosModules.default
           stylix.nixosModules.stylix
           inputs.mango.nixosModules.mango
           ./modules/sys-modules/mangosys.nix
