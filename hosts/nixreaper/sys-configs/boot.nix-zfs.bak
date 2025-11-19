@@ -11,4 +11,5 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot.zfs.package = pkgs.zfs_cachyos;
+
 }

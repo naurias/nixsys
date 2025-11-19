@@ -16,6 +16,7 @@ in {
         vlc
         obs-studio
         qbittorrent
+        vesktop
       ];
     };
 }

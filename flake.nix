@@ -20,6 +20,7 @@
     };
     nvf.url = "github:notashelf/nvf";
     stylix.url = "github:danth/stylix";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; # IMPORTANT
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +33,7 @@
     nvf,
     nur,
     stylix,
+    chaotic,
     #flake-parts,
     #   disko,
     #   agenix,
@@ -64,6 +66,7 @@
           stylix.nixosModules.stylix
           inputs.mango.nixosModules.mango
           ./modules/sys-modules/mangosys.nix
+          chaotic.nixosModules.default
           nur.modules.nixos.default
           nur.legacyPackages.x86_64-linux.repos.iopq.modules.xraya
 

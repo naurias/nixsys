@@ -8,7 +8,6 @@
     git
     brightnessctl
     wireguard-tools
-    protonvpn-gui
     wlr-randr
     kanata
     sops 
