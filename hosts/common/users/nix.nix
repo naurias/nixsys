@@ -25,7 +25,7 @@
 			"flatpak"
 			"plugdev"
 		];
-		packages = [inputs.home-manager.packages.${pkgs.system}.default];
+		packages = [inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default];
 	};
 	home-manager.users.nix = 
 		import ../../../home/nix/${config.networking.hostName}.nix;
