@@ -14,7 +14,7 @@ in {
       coreutils
       unzip
       aria2
-      oh-my-posh
+      stable.oh-my-posh
       exiftool
       zsh-fzf-tab
       fd
