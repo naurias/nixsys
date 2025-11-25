@@ -39,10 +39,11 @@
         enable = true;
         lsp.enable = true;
         treesitter.enable = true;
+        lsp.servers = [ "yaml-language-server" ];
       };
       nix = {
         enable = true;
-        lsp.server = "nixd";
+        lsp.servers = [ "nixd" ];
       };
     };
   };

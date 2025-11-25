@@ -1,0 +1,16 @@
+{
+	prev,
+  ...
+}:
+
+prev.vivaldi.overrideAttrs (oldAttrs: rec {
+				pname = oldAttrs.pname;
+				version = "7.7.3851.52";
+
+				src = prev.fetchurl {
+				 url = "https://downloads.vivaldi.com/stable/vivaldi-stable_7.7.3851.52-1_amd64.deb";
+				hash = "sha256-0mqnn63mc4i3jk7bkc0pa3wycdkf4l55yl1c9cwvr3d4y0c87wkm";
+				};
+
+			})
+

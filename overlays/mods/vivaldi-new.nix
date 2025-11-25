@@ -8,7 +8,11 @@ prev.vivaldi.overrideAttrs (oldAttrs: rec {
     url = "https://downloads.vivaldi.com/stable/vivaldi-stable_7.7.3851.52-1_amd64.deb";
     hash = "sha256-dfKDGPCkjbw5SyxQXwolbjbm+VAXsLnOlCMSVoexFlc=";
   };
-  dontWrapQtApps = false;
-  dontPatchELF = true;
 
+  # Add extra dependencies
+  propagatedBuildInputs = (oldAttrs.propagatedBuildInputs or []) ++ [
+    prev.vivaldi-ffmpeg-codecs
+    prev.hicolor-icon-theme
+  ];
 })
+
