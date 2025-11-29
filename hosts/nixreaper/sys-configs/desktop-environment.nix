@@ -2,11 +2,16 @@
   config,
   libs,
   pkgs,
+  inputs,
   ...
 }: {
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+  };
+
+  programs.niri = {
+    enable = true;
   };
   #  programs.river = {
   #  enable = true;

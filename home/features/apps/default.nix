@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./terminals.nix
@@ -9,5 +14,6 @@
     ./pass.nix
     ./media.nix
     ./filers.nix
+    ./mail-clients.nix
   ];
 }

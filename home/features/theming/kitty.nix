@@ -16,8 +16,7 @@ in {
       font.size = 14;
       themeFile = "rose-pine";
       settings = {
-        background_opacity = 0.8;
-        background_blur = 2;
+        background_opacity = 0.9;
       };
       extraConfig = ''
         bold_font auto

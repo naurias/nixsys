@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     ./home.nix
     ../common
@@ -22,10 +23,12 @@
     };
     desktop = {
       fonts.enable = true;
-      dunst.enable = true;
-      hyprland.enable = true;
+      dunst.enable = false;
+      hyprland.enable = false;
       river.enable = false;
+      niri.enable = true;
       mango.enable = true;
+      waybar.enable = false;
     };
     theming = {
       general.enable = true;
@@ -43,6 +46,7 @@
       pass.enable = true;
       media.enable = true;
       filers.enable = true;
+      mail-clients.enable = true;
     };
   };
 }

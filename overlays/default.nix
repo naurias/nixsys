@@ -12,6 +12,8 @@
     # });
 
     #vivaldi = import ./mods/vivaldi.nix { inherit prev; };
+    #protonmail-desktop = import ./mods/protonmail.nix;
+    #tutanota-desktop = import ./mods/tuta.nix;
 
   };
   stable-packages = final: _prev: {

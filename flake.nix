@@ -14,12 +14,32 @@
       url = "git+https://github.com/naurias/dot-nix.git";
       flake = false;
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.dgop.follows = "dgop";
+    };
     mango = {
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+    };
     nvf.url = "github:notashelf/nvf/v0.8";
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; # IMPORTANT
     nur = {
       url = "github:nix-community/NUR";
@@ -29,6 +49,7 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
   outputs =
@@ -39,6 +60,7 @@
       nur,
       stylix,
       chaotic,
+      niri,
       mango,
       home-manager,
       nixpkgs,
@@ -69,7 +91,10 @@
             nvf.nixosModules.default
             stylix.nixosModules.stylix
             inputs.mango.nixosModules.mango
+            niri.nixosModules.niri
+            ./overlays/niri-overlay.nix
             ./modules/sys-modules/mangosys.nix
+            inputs.dankMaterialShell.nixosModules.dankMaterialShell
             chaotic.nixosModules.default
             nur.modules.nixos.default
             nur.legacyPackages.x86_64-linux.repos.iopq.modules.xraya
@@ -84,8 +109,8 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/nix/nixreaper.nix
-            inputs.mango.hmModules.mango
             ./modules/home-manager/mango.nix
+            inputs.mango.hmModules.mango
           ];
         };
       };

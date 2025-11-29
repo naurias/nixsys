@@ -12,8 +12,7 @@ in {
   config = mkIf cfg.enable {
     stylix.enable = true;
     stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    stylix.image = ./1.png;
-
+    stylix.image = ../../../wallpapers/purplish-mountains.png;
     # Fonts
     stylix.fonts = {
       #  sizes = {

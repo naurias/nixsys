@@ -5,5 +5,6 @@
 		./sound.nix
 		./system-packages.nix
     ./system-variables.nix
+    ./power.nix
 	];
 }

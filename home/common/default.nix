@@ -15,7 +15,6 @@
 			outputs.overlays.additions
 			outputs.overlays.modifications
 			outputs.overlays.stable-packages
-			
 
       inputs.nur.overlays.default
 			# overlays from other nix flakes can be added as well

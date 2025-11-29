@@ -1,0 +1,15 @@
+{
+  prev,
+  ...
+}:
+
+prev.tutanota-desktop.overrideAttrs (oldAttrs: rec {
+  pname = oldAttrs.pname;
+  version = "315.251125.0";
+
+  src = prev.fetchurl {
+    url = "https://github.com/tutao/tutanota/releases/download/tutanota-desktop-release-315.251125.0/tutanota-desktop-linux.AppImage";
+    hash = "";
+  };
+
+})

@@ -5,9 +5,11 @@
   inputs,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.features.desktop.mango;
-in {
+in
+{
   options.features.desktop.mango.enable = mkEnableOption "Enabling dunst";
 
   config = mkIf cfg.enable {
@@ -19,8 +21,9 @@ in {
         source = "${inputs.dotfiles}/mango/autostart.sh";
         executable = true;
       };
-      ".config/waybar/config-mango" = {
-        source = "${inputs.dotfiles}/config-mango";
+      ".config/DankMaterialShell" = {
+        source = "${inputs.dotfiles}/DankMaterialShell";
+        recursive = true;
       };
     };
   };

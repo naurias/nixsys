@@ -1,0 +1,15 @@
+{
+  prev,
+  ...
+}:
+
+prev.protonmail-desktop.overrideAttrs (oldAttrs: rec {
+  pname = oldAttrs.pname;
+  version = "1.10.1";
+
+  src = prev.fetchurl {
+    url = "https://proton.me/download/mail/linux/1.10.1/ProtonMail-desktop-beta.deb";
+    hash = "";
+  };
+
+})
