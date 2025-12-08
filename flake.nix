@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     dotfiles = {
       url = "git+https://github.com/naurias/dot-nix.git";
       flake = false;
@@ -28,10 +28,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.dgop.follows = "dgop";
     };
-    mango = {
-      url = "github:DreamMaoMao/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #mango = {
+    #  url = "github:DreamMaoMao/mango";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     niri = {
       url = "github:sodiboo/niri-flake";
     };
@@ -49,6 +49,15 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
+        # to have it up-to-date or simply don't specify the nixpkgs input
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
 
   };
 
@@ -61,7 +70,8 @@
       stylix,
       chaotic,
       niri,
-      mango,
+      #mango,
+      zen-browser,
       home-manager,
       nixpkgs,
       sops-nix,
@@ -90,10 +100,10 @@
             ./hosts/nixreaper
             nvf.nixosModules.default
             stylix.nixosModules.stylix
-            inputs.mango.nixosModules.mango
+            #inputs.mango.nixosModules.mango
             niri.nixosModules.niri
             ./overlays/niri-overlay.nix
-            ./modules/sys-modules/mangosys.nix
+            #./modules/sys-modules/mangosys.nix
             inputs.dankMaterialShell.nixosModules.dankMaterialShell
             chaotic.nixosModules.default
             nur.modules.nixos.default
@@ -109,8 +119,8 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/nix/nixreaper.nix
-            ./modules/home-manager/mango.nix
-            inputs.mango.hmModules.mango
+            #./modules/home-manager/mango.nix
+            #inputs.mango.hmModules.mango
           ];
         };
       };

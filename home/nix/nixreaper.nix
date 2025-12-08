@@ -24,10 +24,10 @@
     desktop = {
       fonts.enable = true;
       dunst.enable = false;
-      hyprland.enable = false;
+      hyprland.enable = true; # be sure to enable/disable sysconfigs/desktop-environments
       river.enable = false;
       niri.enable = true;
-      mango.enable = true;
+      mango.enable = false; # be sure to enable/disable sysmodules/mango and hm-modules/mango along with mango defs in flake.nix
       waybar.enable = false;
     };
     theming = {

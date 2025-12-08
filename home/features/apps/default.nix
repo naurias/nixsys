@@ -15,5 +15,6 @@
     ./media.nix
     ./filers.nix
     ./mail-clients.nix
+    ./zen.nix
   ];
 }

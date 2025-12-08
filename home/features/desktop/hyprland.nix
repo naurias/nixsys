@@ -19,70 +19,12 @@ in {
       hyprland-qtutils # needed for banners and ANR messages
     ];
 
-    programs.waybar = {
-      enable = true;
-      settings = {
-        mainBar = {
-          layer = "top";
-          position = "top";
-          height = 30;
-          modules-left = ["hyprland/workspaces" "wlr/taskbar"];
-          modules-center = ["hyprland/window"];
-          modules-right = ["pulseaudio" "clock" "tray"];
-
-          "wlr/taskbar" = {
-            format = "{icon}";
-            icon-size = 14;
-            tooltip-format = "{title}";
-            on-click = "activate";
-            on-click-middle = "close";
-          };
-          "hyprland/window" = {
-            tooltip = true;
-          };
-          "tray" = {
-            spacing = 10;
-          };
-          "clock" = {
-            tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          };
-          "pulseaudio" = {
-            format = "{volume}% {icon} {format_source}";
-            format-bluetooth = "{volume}% {icon} {format_source}";
-            format-bluetooth-muted = " {icon} {format_source}";
-            format-muted = " {format_source}";
-            format-source = "{volume}% ";
-            format-source-muted = "";
-            format-icons = {
-              headphone = "";
-              hands-free = "";
-              headset = "";
-              phone = "";
-              portable = "";
-              car = "";
-              default = [
-                ""
-                ""
-                ""
-              ];
-            };
-          };
-        };
-      };
-      style = ''
-              * {
-            border: none;
-            border-radius: 0;
-            font-family: Jetbrains Mono Medium;
-            font-size: 10pt;
-            min-height: 0;
-        }
-
-      '';
-    };
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
+      plugins = [
+        pkgs.hyprlandPlugins.hyprscrolling
+      ];
       settings = {
         env = [
           "NIXOS_OZONE_WL, 1"
@@ -101,14 +43,25 @@ in {
 
         bind = [
           "$mod, Return, exec, kitty"
-          "$mod, D, exec, rofi -show drun -show-icons"
+          "$mod, D, exec, dms ipc call spotlight open"
           "$mod, W, killactive,"
           "$mod, F, fullscreen,"
           "$mod, M, fullscreenstate, 1"
           "$mod SHIFT, F, fullscreenstate, 0 2"
           "$mod, S, togglefloating,"
           "$mod ALT, F,workspaceopt, allfloat"
-          "$mod SHIFT, Q, exit,"
+          # Scrolling
+          "$mod, Q, layoutmsg, move -col"
+          "$mod SHIFT, Q, layoutmsg,movewindowto l"
+          "$mod, E, layoutmsg, move  +col"
+          "$mod SHIFT, E,layoutmsg, movewindow r"
+          "$mod, equal, layoutmsg, colresize +0.1"
+          "$mod, minus, layoutmsg, colresize -0.1"
+          "$mod, R, layoutmsg, colresize +conf"
+          ''$mod, N, exec, hyprctl keyword general:layout "scrolling"''
+          ''$mod SHIFT, N,exec, hyprctl keyword general:layout "master"''
+
+          "$mod ALT, Q, exit,"
           "$mod SHIFT,left,movewindow,l"
           "$mod SHIFT,right,movewindow,r"
           "$mod SHIFT,up,movewindow,u"
@@ -170,6 +123,7 @@ in {
           ",XF86AudioPrev, exec, playerctl previous"
           ",XF86MonBrightnessDown,exec,brightnessctl set 5%-"
           ",XF86MonBrightnessUp,exec,brightnessctl set +5%"
+
         ];
 
         bindm = [
@@ -195,7 +149,7 @@ in {
           ];
         };
         exec-once = [
-          "waybar"
+          "dms run"
           "wl-paste --type text --watch cliphist store # Stores only text data"
           "wl-paste --type image --watch cliphist store # Stores only image data"
           "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
@@ -231,6 +185,13 @@ in {
             passes = 4;
             new_optimizations = true;
           };
+        };
+        plugin.hyprscrolling = {
+          column_width = 0.6;
+          fullscreen_on_one_column = true;
+          follow_focus = true;
+          explicit_column_widths = "0.333,0.5,0.667";
+
         };
         master = {
           new_status = "master";

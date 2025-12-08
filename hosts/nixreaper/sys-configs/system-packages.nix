@@ -10,7 +10,10 @@
     wireguard-tools
     wlr-randr
     kanata
-    sops 
+    sops
+    xdg-desktop-portal-gnome
+    xdg-desktop-portal-wlr
+    xdg-desktop-portal-gtk
     age 
     ssh-to-age
     compose2nix
