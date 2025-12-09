@@ -9,6 +9,5 @@
   boot.loader.limine.enable = true;
   boot.loader.limine.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  boot.zfs.package = pkgs.zfs_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

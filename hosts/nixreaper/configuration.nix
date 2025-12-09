@@ -9,7 +9,6 @@
     ./sys-configs
   ];
 
-  networking.hostId = "8425e349";
   networking.hostName = "nixreaper"; # Define your hostname.
   # Network Manager
   networking.networkmanager.enable = true;
@@ -58,5 +57,5 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 }

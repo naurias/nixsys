@@ -6,6 +6,5 @@
 		./system-packages.nix
     ./system-variables.nix
     ./power.nix
-    ./secrets.nix
 	];
 }
