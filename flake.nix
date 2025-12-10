@@ -40,7 +40,6 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; # IMPORTANT
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -68,7 +67,6 @@
       nvf,
       nur,
       stylix,
-      chaotic,
       niri,
       #mango,
       zen-browser,
@@ -105,7 +103,6 @@
             ./overlays/niri-overlay.nix
             #./modules/sys-modules/mangosys.nix
             inputs.dankMaterialShell.nixosModules.dankMaterialShell
-            chaotic.nixosModules.default
             nur.modules.nixos.default
             nur.legacyPackages.x86_64-linux.repos.iopq.modules.xraya
             sops-nix.nixosModules.sops
