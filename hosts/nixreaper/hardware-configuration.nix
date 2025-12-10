@@ -14,25 +14,25 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/050bb73e-e599-470b-ac7b-33351ee11bfd";
+    { device = "/dev/disk/by-uuid/88948303-f7bb-4a9a-8c42-f7d360848ac7";
       fsType = "btrfs";
-      options = [ "subvol=@nixroot" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" ];
+      options = [ "subvol=@nixroot" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" "commit=120" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/050bb73e-e599-470b-ac7b-33351ee11bfd";
+    { device = "/dev/disk/by-uuid/88948303-f7bb-4a9a-8c42-f7d360848ac7";
       fsType = "btrfs";
-      options = [ "subvol=@nixhome" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" ];
+      options = [ "subvol=@nixhome" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" "commit=120"];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/050bb73e-e599-470b-ac7b-33351ee11bfd";
+    { device = "/dev/disk/by-uuid/88948303-f7bb-4a9a-8c42-f7d360848ac7";
       fsType = "btrfs";
-      options = [ "subvol=@nix" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" ];
+      options = [ "subvol=@nix" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" "commit=120"];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/F4D7-C413";
+    { device = "/dev/disk/by-uuid/B35C-25CC";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
