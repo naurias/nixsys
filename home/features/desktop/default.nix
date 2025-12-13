@@ -7,7 +7,7 @@
     ./mango.nix
     ./niri.nix
     ./waybar.nix
-    ./dank.nix
+    ./quickshell.nix
   ];
 
   #rofi-wayland

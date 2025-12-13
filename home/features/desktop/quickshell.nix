@@ -2,6 +2,7 @@
 {
   imports = [
     inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+    inputs.noctalia.homeModules.default
   ];
   home.packages = with pkgs; [
     cava
@@ -10,5 +11,9 @@
   ];
   programs.dankMaterialShell = {
     enable = true;
+  };
+
+  programs.noctalia-shell = {
+    enable = false;
   };
 }

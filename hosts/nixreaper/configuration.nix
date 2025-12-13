@@ -12,8 +12,6 @@
   networking.hostName = "nixreaper"; # Define your hostname.
   # Network Manager
   networking.networkmanager.enable = true;
-  # HostID
-  networking.hostId = "8425e349";
   # Set your time zone.
   time.timeZone = "Asia/Karachi";
 

@@ -8,10 +8,9 @@
 }: {
 
 
-
   boot.loader.limine.enable = true;
   boot.loader.limine.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_6_17;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }
