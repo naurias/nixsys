@@ -14,10 +14,6 @@
       url = "git+https://github.com/naurias/dot-nix.git";
       flake = false;
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     dgop = {
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -68,7 +64,6 @@
       nur,
       stylix,
       niri,
-      #mango,
       zen-browser,
       home-manager,
       nixpkgs,
@@ -101,7 +96,6 @@
             #inputs.mango.nixosModules.mango
             niri.nixosModules.niri
             ./overlays/niri-overlay.nix
-            #./modules/sys-modules/mangosys.nix
             inputs.dankMaterialShell.nixosModules.dankMaterialShell
             nur.modules.nixos.default
             nur.legacyPackages.x86_64-linux.repos.iopq.modules.xraya
@@ -116,8 +110,6 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/nix/nixreaper.nix
-            #./modules/home-manager/mango.nix
-            #inputs.mango.hmModules.mango
           ];
         };
       };

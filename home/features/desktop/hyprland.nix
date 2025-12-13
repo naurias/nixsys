@@ -22,9 +22,6 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-      plugins = [
-        pkgs.hyprlandPlugins.hyprscrolling
-      ];
       settings = {
         env = [
           "NIXOS_OZONE_WL, 1"
@@ -43,24 +40,13 @@ in {
 
         bind = [
           "$mod, Return, exec, kitty"
-          "$mod, D, exec, dms ipc call spotlight open"
+          "$mod, D, exec, dms ipc call spotlight toggle"
           "$mod, W, killactive,"
           "$mod, F, fullscreen,"
           "$mod, M, fullscreenstate, 1"
           "$mod SHIFT, F, fullscreenstate, 0 2"
           "$mod, S, togglefloating,"
           "$mod ALT, F,workspaceopt, allfloat"
-          # Scrolling
-          "$mod, Q, layoutmsg, move -col"
-          "$mod SHIFT, Q, layoutmsg,movewindowto l"
-          "$mod, E, layoutmsg, move  +col"
-          "$mod SHIFT, E,layoutmsg, movewindow r"
-          "$mod, equal, layoutmsg, colresize +0.1"
-          "$mod, minus, layoutmsg, colresize -0.1"
-          "$mod, R, layoutmsg, colresize +conf"
-          ''$mod, N, exec, hyprctl keyword general:layout "scrolling"''
-          ''$mod SHIFT, N,exec, hyprctl keyword general:layout "master"''
-
           "$mod ALT, Q, exit,"
           "$mod SHIFT,left,movewindow,l"
           "$mod SHIFT,right,movewindow,r"

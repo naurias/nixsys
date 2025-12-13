@@ -15,6 +15,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       w3m
+      nur.repos.forkprince.helium-nightly
     ];
     programs.firefox = {
       enable = true;
