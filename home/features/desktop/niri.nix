@@ -41,7 +41,7 @@ in
       prefer-no-csd = true;
       spawn-at-startup = [
         { command = [ "xwayland-satellite" ]; }
-        { argv = [ "dms" "run" ]; }
+        { command = [ "noctalia-shell" ]; }
       ];
       environment = {
         DISPLAY = ":0";
@@ -176,12 +176,20 @@ in
 
         # Noctalia 
         "Mod+D".action.spawn = [
-          "dms"
+          "noctalia-shell"
           "ipc"
           "call"
-          "spotlight"
+          "launcher"
           "toggle"
         ];
+
+        "Mod+V".action.spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "launcher"
+          "clipboard"
+          ];
 
         #Move
         "Mod+Shift+Left".action = move-column-left;

@@ -8,12 +8,27 @@
     cava
     cliphist
     kdePackages.qtmultimedia
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.dankMaterialShell.packages.${pkgs.stdenv.hostPlatform.system}.default
+    quickshell
   ];
-  programs.dankMaterialShell = {
-    enable = true;
+
+  home.file = {
+    ".config/noctalia" = {
+      source = "${inputs.dotfiles}/noctalia";
+      recursive = true;
+    };
+    ".config/DankMaterialShell" = {
+      source = "${inputs.dotfiles}/DankMaterialShell";
+      recursive = true;
+    };
   };
 
-  programs.noctalia-shell = {
-    enable = false;
-  };
+  #programs.dankMaterialShell = {
+  #  enable = false;
+  #};
+
+  #programs.noctalia-shell = {
+  #  enable = false;
+  #};
 }

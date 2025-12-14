@@ -14,50 +14,32 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "zpool/root";
-      fsType = "zfs";
-      options = [ "zfsutil" ];
+    { device = "/dev/disk/by-uuid/189e0a28-200d-496f-ab72-63f1ea1a08d5";
+      fsType = "btrfs";
+      options = [ "subvol=@" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" "commit=120" ];
     };
 
   fileSystems."/nix" =
-    { device = "zpool/nix";
-      fsType = "zfs";
-      options = [ "zfsutil" ];
-    };
-
-  fileSystems."/var" =
-    { device = "zpool/var";
-      fsType = "zfs";
-      options = [ "zfsutil" ];
+    { device = "/dev/disk/by-uuid/189e0a28-200d-496f-ab72-63f1ea1a08d5";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" "commit=120" ];
     };
 
   fileSystems."/home" =
-    { device = "zpool/home";
-      fsType = "zfs";
-      options = [ "zfsutil" ];
+    { device = "/dev/disk/by-uuid/189e0a28-200d-496f-ab72-63f1ea1a08d5";
+      fsType = "btrfs";
+      options = [ "subvol=@home" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" "commit=120" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-id/wwn-0x5000000000003221-part1";
+    { device = "/dev/disk/by-uuid/E85D-D71C";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ 
-       {
-	 device = "/dev/disk/by-id/wwn-0x5000000000003221-part2";
-	 randomEncryption = true;
-       }
+    [ { device = "/dev/disk/by-uuid/87838928-6c70-4bfc-aaaa-8da0188cd193"; }
     ];
-
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 with lib; let
@@ -12,21 +13,14 @@ in {
   config = mkIf cfg.enable {
     virtualisation = {
       podman = {
+        package = pkgs.stable.podman;
         enable = true;
         dockerCompat = true;
-        autoPrune = {
-          enable = true;
-          flags = [
-            "--filter=until=24h"
-            "--filter=label!=important"
-          ];
-        };
-        defaultNetwork.settings.dns_enabled = true;
       };
     };
     environment.systemPackages = with pkgs; [
-      podman-compose
-      distrobox
+      stable.podman-compose
+      stable.distrobox
     ];
   };
 }
