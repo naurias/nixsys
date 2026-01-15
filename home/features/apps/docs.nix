@@ -15,6 +15,7 @@ in {
         texliveFull
         pandoc 
         nb
+        socat
         kdePackages.okular
         zathura
         kdePackages.qtsvg

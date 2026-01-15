@@ -29,6 +29,9 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
+
     #mango = {
     #  url = "github:DreamMaoMao/mango";
     #  inputs.nixpkgs.follows = "nixpkgs";
@@ -49,15 +52,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs = {
-        # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
-        # to have it up-to-date or simply don't specify the nixpkgs input
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
-    };
 
   };
 
@@ -69,8 +63,8 @@
       nur,
       stylix,
       niri,
-      zen-browser,
       home-manager,
+      nix-cachyos-kernel,
       nixpkgs,
       sops-nix,
       ...
@@ -101,6 +95,7 @@
             #inputs.mango.nixosModules.mango
             niri.nixosModules.niri
             ./overlays/niri-overlay.nix
+            ./overlays/cachyos-kernel.nix
             inputs.dankMaterialShell.nixosModules.dankMaterialShell
             nur.modules.nixos.default
             nur.legacyPackages.x86_64-linux.repos.iopq.modules.xraya

@@ -16,12 +16,11 @@ in
     services.swww.enable = true;
 
     #theming options go here mainly stylix
-    stylix.targets.firefox.enable = true;
-    stylix.targets.firefox.profileNames = [ "nix" ];
-    stylix.targets.firefox.colorTheme.enable = true;
+    stylix.targets.floorp.enable = true;
+    stylix.targets.floorp.profileNames = [ "nix" ];
+    stylix.targets.floorp.colors.enable = true;
+    stylix.targets.floorp.colorTheme.enable = true;
 
-    stylix.targets.zen-browser.enable = true;
-    stylix.targets.zen-browser.profileNames = [ "nix" ];
     # cursor
     stylix.cursor.package = pkgs.bibata-cursors;
     stylix.cursor.name = "Bibata-Modern-Ice";

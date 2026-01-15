@@ -14,6 +14,7 @@
     xdg-desktop-portal-gnome
     xdg-desktop-portal-wlr
     xdg-desktop-portal-gtk
+    xdg-desktop-portal
     age 
     ssh-to-age
     compose2nix

@@ -36,6 +36,7 @@
     };
     development = {
       snowmacs.enable = true;
+      jetbrains.enable = true;
     };
     apps = {
       terminals.enable = true;

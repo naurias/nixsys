@@ -6,5 +6,7 @@
 		./system-packages.nix
     ./system-variables.nix
     ./power.nix
+    ./network.nix
+    #./kanata.nix
 	];
 }

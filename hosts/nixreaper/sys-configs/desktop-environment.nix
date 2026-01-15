@@ -12,11 +12,12 @@
 
   programs.niri = {
     enable = true;
+    package = pkgs.niri;
   };
   xdg.portal = {
     enable = true;
-    xdgOpenUsePortal = true;
     extraPortals = [
+      pkgs.xdg-desktop-portal
       pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
@@ -37,6 +38,11 @@
         ];
         "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
         "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+      };
+      hyprland = {
+        default = [ "hyprland" "gtk" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        #        "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
       };
     };
 
