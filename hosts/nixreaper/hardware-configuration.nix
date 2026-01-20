@@ -10,35 +10,41 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "uinput" ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/189e0a28-200d-496f-ab72-63f1ea1a08d5";
+    { device = "/dev/disk/by-uuid/627db221-89f8-47ea-859b-f003773ff9ab";
       fsType = "btrfs";
       options = [ "subvol=@" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" "commit=120" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/189e0a28-200d-496f-ab72-63f1ea1a08d5";
+    { device = "/dev/disk/by-uuid/627db221-89f8-47ea-859b-f003773ff9ab";
       fsType = "btrfs";
       options = [ "subvol=@nix" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" "commit=120" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/189e0a28-200d-496f-ab72-63f1ea1a08d5";
+    { device = "/dev/disk/by-uuid/627db221-89f8-47ea-859b-f003773ff9ab";
       fsType = "btrfs";
       options = [ "subvol=@home" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" "commit=120" ];
     };
 
+  fileSystems."/var" =
+    { device = "/dev/disk/by-uuid/627db221-89f8-47ea-859b-f003773ff9ab";
+      fsType = "btrfs";
+      options = [ "subvol=@var" "noatime" "compress=zstd" "discard=async" "space_cache=v2" "ssd" "commit=120" ];
+    };
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/E85D-D71C";
+    { device = "/dev/disk/by-uuid/C8A1-04FF";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/87838928-6c70-4bfc-aaaa-8da0188cd193"; }
+    [ { device = "/dev/disk/by-uuid/296cca72-fdf4-4692-a349-140e1d263ad3"; }
     ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

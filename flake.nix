@@ -39,7 +39,7 @@
     niri = {
       url = "github:sodiboo/niri-flake";
     };
-    nvf.url = "github:notashelf/nvf/v0.8";
+    nvf.url = "github:notashelf/nvf";
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";

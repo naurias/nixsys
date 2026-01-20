@@ -15,28 +15,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       w3m
-      nur.repos.forkprince.helium-nightly
-      vivaldi
-      vivaldi-ffmpeg-codecs
+      brave
     ];
-    programs.floorp = {
-      enable = true;
-      profiles = {
-        nix = {
-          isDefault = true;
-          extensions = {
-            force = true;
-            packages = with pkgs.nur.repos.rycee.firefox-addons; [
-              ublock-origin
-              single-file
-              keepassxc-browser
-              proton-vpn
-              karakeep
-              aria2-integration
-            ];
-          };
-        };
-      };
-    };
   };
 }
